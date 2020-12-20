@@ -11,6 +11,7 @@ int almostPress = 80;
 int armRetract = 0;
 int lidClose = 90;
 int lidOpen = 0;
+int lidSpeed = 50;
 int shortPause = 100; //100 milliseconds
 int halfSecondPause = 500; //half second
 int secondPause = 1000; //one second
@@ -110,13 +111,13 @@ void action1()
 {
   Serial.println("1");
   lidServo.write(lidOpen);
-  delay(oneSecondPause);
+  delay(secondPause);
   armServo.write(buttonPress);
   delay(halfSecondPause); 
   armServo.write(armRetract);
-  delay(oneSecondPause);
+  delay(secondPause);
   lidServo.write(lidClose);
-  delay(oneSecondPause);
+  delay(secondPause);
 }
 
 void action2(){
@@ -144,11 +145,11 @@ void action3(){
 void action4()
 {
   Serial.println("4");
-  delay(oneSecondPause);
+  delay(secondPause);
   lidServo.write(lidOpen);
   delay(shortPause);
   armServo.write(buttonPress);
-  delay(oneSecondPause);
+  delay(secondPause);
   armServo.write(armRetract);
   lidCloseSlow();
 }
@@ -230,17 +231,7 @@ void action8()
  armServo.write(armRetract);
  delay(shortPause);
  lidCloseSlow();
- delay(oneSecondPause);
+ delay(secondPause);
  lidServo.write(lidOpen);
  
 }
-
-/*
-int buttonPress = 100;
-int almostPress = 80;
-int armRetract = 0;
-int lidClose = 90;
-int shortPause = 100; //100 milliseconds
-int halfSecondPause = 500; //half second
-int secondPause = 1000; //one second
- */
